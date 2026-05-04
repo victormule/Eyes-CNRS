@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Espace Collaboratif: Chapitre 2</title>
+  <meta name="description" content=" L'échelle de Martin-Schultz, utilisée en anthropologie physique, est une échelle colorimétrique standard en 16 tons qui détermine approximativement la couleur des yeux ">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Abounaddara - CNRS - ANR">
+  <meta name="theme-color" content="#000000">
+
+
+  <link rel="canonical" href="https://soleyman.netlify.app/">
+
+  <!-- Cormorant Garamond — chargement non-bloquant (légende + sous-titres SRT) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap">
+  </noscript>
+
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Echelle de Martin-Schultz — Espace Collaboratif">
+  <meta property="og:description" content="L'échelle de Martin-Schultz, utilisée en anthropologie physique, est une échelle colorimétrique standard en 16 tons qui détermine approximativement la couleur des yeux ">
+  <meta property="og:url" content="https://soleyman.netlify.app/">
+  <meta property="og:image" content="https://example.com/eyes/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Echelle de Martin-Schultz — Espace Collaboratif">
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Echelle de Martin-Schultz — Espace Collaboratif">
+  <meta name="twitter:description" content="L'échelle de Martin-Schultz, utilisée en anthropologie physique, est une échelle colorimétrique standard en 16 tons qui détermine approximativement la couleur des yeux ">
+  <meta name="twitter:image" content="https://example.com/eyes/og-cover.jpg">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "VisualArtwork",
+    "name": "Eyes",
+    "description": "L'échelle de Martin-Schultz, utilisée en anthropologie physique, est une échelle colorimétrique standard en 16 tons qui détermine approximativement la couleur des yeux ",
+    "artMedium": "Web interactive installation",
+    "artform": "Digital installation",
+    "url": "https://soleyman.netlify.app/",
+    "image": "https://example.com/eyes/og-cover.jpg",
+    "creator": {
+      "@type": "Person",
+      "name": "Abounaddara - CNRS - ANR"
+    },
+    "inLanguage": "fr"
+  }
+  </script>
+
+
+  <!--
+    PRELOAD STRATÉGIQUE
+    ────────────────────────────────────────────────────────────────
+    Une seule image préchargée en haute priorité : EyesSkin (LCP).
+    C'est la couche supérieure (z-index 13), la plus large à l'écran
+    et la plus lourde — donc la candidate LCP évidente.
+
+    Les autres images (Globe, GlobeFixe, Reflet) sont découvertes
+    immédiatement par le parser HTML grâce au srcset, et bénéficient
+    déjà de fetchpriority="high" sur leurs <img>. Multiplier les
+    preloads réduisait la priorité effective du vrai LCP.
+
+    imagesrcset / imagesizes permettent au browser de choisir la bonne
+    variante (800/1200/1920) AVANT même de parser le <img> correspondant.
+  -->
+  <link rel="preload" as="image"
+        href="images/EyesSkin.webp"
+        imagesrcset="images/EyesSkin-800.webp 800w, images/EyesSkin-1200.webp 1200w, images/EyesSkin.webp 1920w"
+        imagesizes="100vw"
+        fetchpriority="high">
+
+  <style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;background:#000}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#loader{position:fixed;inset:0;z-index:999;background:#000;display:flex;align-items:center;justify-content:center}#loader.out{opacity:0;pointer-events:none}#loader-track{width:100px;height:1px;background:rgba(255,255,255,0.1)}#loader-fill{height:100%;width:0;background:rgba(255,255,255,0.5);transition:width 0.1s linear}#scene{position:relative;width:100%;height:100%;transform-origin:50% 50%;transform:translateZ(0);contain:layout style}.layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;backface-visibility:hidden;pointer-events:none;display:block;transform:translateZ(0)}.globe-wrap{position:absolute;inset:0;transform:translate3d(0,0,0);pointer-events:none;contain:layout style}.globe-wrap.clickable{pointer-events:auto;cursor:pointer}#gw1{z-index:1}#gw2{z-index:2}#gw3{z-index:3}#gw4{z-index:4}.globe-scale{position:absolute;inset:0;transform:translateZ(0)}.globe-play{opacity:0}#r1{z-index:5}#r2{z-index:6}#r3{z-index:7}#r4{z-index:8}#gf1{z-index:9}#gf2{z-index:10}#gf3{z-index:11}#gf4{z-index:12}#sk{z-index:13;pointer-events:none}#gf1,#gf2,#gf3,#gf4{opacity:1}#sk-play1,#sk-play2,#sk-play3,#sk-play4,#sk-play-final1,#sk-play-final2,#sk-play-final3,#sk-play-final4{position:fixed;z-index:14;opacity:0;pointer-events:none;display:block;transform:translateZ(0);transform-origin:0 0}#btn-close{position:fixed;top:32px;right:36px;z-index:200;width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,0.85);background:rgba(255,255,255,0.08);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 400ms ease,transform 200ms cubic-bezier(0.2,0,0.2,1),background 200ms ease,box-shadow 200ms ease}#btn-close.visible{opacity:1;pointer-events:auto}#btn-close:hover{transform:scale(1.28);background:rgba(255,255,255,0.18);box-shadow:0 0 24px rgba(255,255,255,0.55),0 0 7px rgba(255,255,255,0.9)}#btn-close svg{width:18px;height:18px;stroke:#fff;stroke-width:2;stroke-linecap:round}#video-overlay{position:fixed;inset:0;z-index:15;background:#000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}#video-overlay.active{pointer-events:auto}#video-overlay video{width:100%;height:100%;object-fit:contain;display:block}
+
+/* === SOUS-TITRES SRT === */
+/* Police chargée à la demande (cf. ensureSubtitleFont() en bas du script) pour ne pas bloquer le rendu initial */
+
+/* === OVERLAY TEXTE (témoignage de l'œil 4) ===
+   Même z-index/comportement que #video-overlay : plein-écran noir,
+   masque entièrement la scène zoomée 120x (donc rend inutile la
+   présence des skinPlay4Cut). Affiche un témoignage en italique
+   Cormorant Garamond, en harmonie typographique avec la légende
+   et les sous-titres SRT.                                       */
+#text-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 6vw, 96px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#text-overlay.active {
+  pointer-events: auto;
+}
+#text-overlay.visible {
+  opacity: 1;
+}
+#text-overlay .text-content {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  transform: translateY(20px);
+  transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#text-overlay.visible .text-content {
+  transform: translateY(0);
+}
+#text-overlay .text-label {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(11px, 1.05vw, 16px);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: clamp(20px, 3.2vh, 44px);
+}
+#text-overlay .text-quote {
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(22px, 2.8vw, 42px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  letter-spacing: 0.012em;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  text-wrap: balance;
+}
+
+#srt-subtitles {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  pointer-events: none;
+  text-align: center;
+  width: 92vw;
+  max-width: 1400px;
+  opacity: 0;
+  transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#srt-subtitles.visible {
+  opacity: 1;
+}
+#srt-subtitles .srt-line {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.92);
+  color: #fff;
+  font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  font-size: clamp(22px, 4.5vw, 56px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  padding: 14px 32px;
+  margin: 4px 0;
+  border-radius: 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  white-space: pre-wrap;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* === LÉGENDE / NAVBAR RÉTRACTABLE === */
+/* === MENU DÉROULANT ========================================= */
+/*
+  #caption-wrap  position:fixed, top:0 toujours.
+    Fermé  : translateY(-(menu-h + 2vh)) → seule la ligne dépasse à 2vh du bord
+    Ouvert : translateY(0)               → fond couvre depuis le bord supérieur
+
+    #caption     fond noir + texte
+    #caption-tab SVG : triangle noir (intérieur flèche) + ligne animée
+*/
+
+#caption-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 51;
+  opacity: 0;
+  pointer-events: none;
+  --menu-h: 64px;
+  /* 2vh de marge inclus dans le translateY négatif */
+  transform: translateY(calc(-1 * var(--menu-h) + 1vh));
+  transition:
+    opacity   700ms ease,
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+#caption-wrap.visible {
+  opacity: 1;
+}
+#caption-wrap.ready {
+  pointer-events: auto;
+}
+#caption-wrap.expanded {
+  transform: translateY(0);
+}
+
+/* ── Fond noir + texte ───────────────────────────────────────*/
+#caption {
+  /* min-height au lieu de height : le bloc grandit si le texte wrape
+     sur petit écran. Le JS mesure ensuite la hauteur réelle via
+     getBoundingClientRect() pour ajuster --menu-h correctement.     */
+  min-height: var(--menu-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.92);
+  padding-top: clamp(12px, 2vh, 20px);
+  padding-bottom: clamp(12px, 2vh, 20px);
+}
+#caption p {
+  padding: 0 clamp(16px, 8%, 80px);
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  font-size: clamp(13px, 1.18vw, 19px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.025em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+/* ── SVG ligne + triangle ────────────────────────────────────*/
+#caption-tab {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+#caption-tab svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Triangle noir = intérieur de la flèche */
+#caption-tab .bg-path {
+  fill: rgba(0, 0, 0, 0.92);
+  stroke: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+#caption-tab .bg-path.shown {
+  opacity: 1;
+}
+
+/* Ligne animée */
+#caption-tab .line-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-dasharray: var(--line-len, 9999);
+  stroke-dashoffset: var(--line-len, 9999);
+  transition: stroke 400ms ease, filter 400ms ease;
+}
+#caption-tab .line-path.drawn {
+  animation: draw-line 1400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Hover + ouvert : ligne lumineuse */
+#caption-wrap:hover .line-path,
+#caption-wrap.expanded .line-path {
+  stroke: rgba(255, 255, 255, 0.88);
+  filter:
+    drop-shadow(0 0 5px rgba(255,255,255,0.55))
+    drop-shadow(0 0 18px rgba(255,255,255,0.18));
+}
+
+/* Lueur bas du menu ouvert */
+#caption-wrap.expanded #caption {
+  box-shadow:
+    0 0 12px rgba(255,255,255,0.20),
+    0 6px 28px rgba(0,0,0,0.55);
+}
+</style>
+</head>
+<body>
+
+<header class="sr-only">
+  <h1>Eyes — Installation web interactive autour d'yeux de verre anciens</h1>
+  <p>
+    Une série de prothèses oculaires anciennes en verre, installées dans
+    leur écrin d'origine. Approchez la souris : les yeux s'éveillent et
+    suivent votre regard. Cliquez : la caméra plonge dans la pupille,
+    la mise au point se fait, et l'œil révèle ce qu'il observe.
+  </p>
+</header>
+
+<noscript>
+  <div style="position:fixed;inset:0;z-index:1000;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center;font-family:system-ui,sans-serif;">
+    <div>
+      <h2 style="margin-bottom:1rem;">Eyes — Installation interactive</h2>
+      <p>Cette installation nécessite JavaScript pour fonctionner.<br>Veuillez l'activer dans votre navigateur.</p>
+    </div>
+  </div>
+</noscript>
+
+<div id="loader">
+  <div id="loader-track"><div id="loader-fill"></div></div>
+</div>
+
+<!-- Conteneur de sous-titres SRT -->
+<div id="srt-subtitles"></div>
+
+<main id="scene">
+  <div id="gw1" class="globe-wrap">
+    <div class="globe-scale">
+      <img id="g1n" class="layer globe-normal" src="images/EyesGlobe.webp"
+           srcset="images/EyesGlobe-800.webp 800w, images/EyesGlobe-1200.webp 1200w, images/EyesGlobe.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async">
+      <img id="g1p" class="layer globe-play"   src="images/EyesGlobePlay.webp"
+           srcset="images/EyesGlobePlay-800.webp 800w, images/EyesGlobePlay-1200.webp 1200w, images/EyesGlobePlay.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async" fetchpriority="low">
+    </div>
+  </div>
+  <div id="gw2" class="globe-wrap">
+    <div class="globe-scale">
+      <img id="g2n" class="layer globe-normal" src="images/EyesGlobe2.webp"
+           srcset="images/EyesGlobe2-800.webp 800w, images/EyesGlobe2-1200.webp 1200w, images/EyesGlobe2.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async">
+      <img id="g2p" class="layer globe-play"   src="images/EyesGlobePlay2.webp"
+           srcset="images/EyesGlobePlay2-800.webp 800w, images/EyesGlobePlay2-1200.webp 1200w, images/EyesGlobePlay2.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async" fetchpriority="low">
+    </div>
+  </div>
+  <div id="gw3" class="globe-wrap">
+    <div class="globe-scale">
+      <img id="g3n" class="layer globe-normal" src="images/EyesGlobe3.webp"
+           srcset="images/EyesGlobe3-800.webp 800w, images/EyesGlobe3-1200.webp 1200w, images/EyesGlobe3.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async">
+      <img id="g3p" class="layer globe-play"   src="images/EyesGlobePlay3.webp"
+           srcset="images/EyesGlobePlay3-800.webp 800w, images/EyesGlobePlay3-1200.webp 1200w, images/EyesGlobePlay3.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async" fetchpriority="low">
+    </div>
+  </div>
+  <div id="gw4" class="globe-wrap">
+    <div class="globe-scale">
+      <img id="g4n" class="layer globe-normal" src="images/EyesGlobe4.webp"
+           srcset="images/EyesGlobe4-800.webp 800w, images/EyesGlobe4-1200.webp 1200w, images/EyesGlobe4.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async">
+      <img id="g4p" class="layer globe-play"   src="images/EyesGlobePlay4.webp"
+           srcset="images/EyesGlobePlay4-800.webp 800w, images/EyesGlobePlay4-1200.webp 1200w, images/EyesGlobePlay4.webp 1920w"
+           sizes="100vw"
+           width="1920" height="1342" alt="" decoding="async" fetchpriority="low">
+    </div>
+  </div>
+
+  <img id="r1"  class="layer" src="images/EyesReflet.webp"
+       srcset="images/EyesReflet-800.webp 800w, images/EyesReflet-1200.webp 1200w, images/EyesReflet.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="r2"  class="layer" src="images/EyesReflet2.webp"
+       srcset="images/EyesReflet2-800.webp 800w, images/EyesReflet2-1200.webp 1200w, images/EyesReflet2.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="r3"  class="layer" src="images/EyesReflet3.webp"
+       srcset="images/EyesReflet3-800.webp 800w, images/EyesReflet3-1200.webp 1200w, images/EyesReflet3.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="r4"  class="layer" src="images/EyesReflet4.webp"
+       srcset="images/EyesReflet4-800.webp 800w, images/EyesReflet4-1200.webp 1200w, images/EyesReflet4.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="gf1" class="layer" src="images/EyesGlobeFixe.webp"
+       srcset="images/EyesGlobeFixe-800.webp 800w, images/EyesGlobeFixe-1200.webp 1200w, images/EyesGlobeFixe.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="gf2" class="layer" src="images/EyesGlobeFixe2.webp"
+       srcset="images/EyesGlobeFixe2-800.webp 800w, images/EyesGlobeFixe2-1200.webp 1200w, images/EyesGlobeFixe2.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="gf3" class="layer" src="images/EyesGlobeFixe3.webp"
+       srcset="images/EyesGlobeFixe3-800.webp 800w, images/EyesGlobeFixe3-1200.webp 1200w, images/EyesGlobeFixe3.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <img id="gf4" class="layer" src="images/EyesGlobeFixe4.webp"
+       srcset="images/EyesGlobeFixe4-800.webp 800w, images/EyesGlobeFixe4-1200.webp 1200w, images/EyesGlobeFixe4.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async">
+  <!--
+    EyesSkin = LCP candidate (couche supérieure z-index 13, image la
+    plus large visuellement, fichier source le plus lourd ~2.4 Mo).
+    fetchpriority="high" + preload responsive dans le <head>.
+  -->
+  <img id="sk"  class="layer" src="images/EyesSkin.webp"
+       srcset="images/EyesSkin-800.webp 800w, images/EyesSkin-1200.webp 1200w, images/EyesSkin.webp 1920w"
+       sizes="100vw"
+       width="1920" height="1342" alt="" decoding="async" fetchpriority="high">
+</main>
+
+<!--
+  Images SkinPlay : utilisées après zoom (cross-fade dans l'iris).
+  Differées par decodeIdle() en JS. Pas de loading="lazy" car l'élément
+  est <position:fixed> à 0,0 — le browser ne saurait pas qu'il sera
+  déplacé/dimensionné dans le viewport, et lazy bloquerait le chargement.
+  srcset reste utile car après zoom l'image occupe ~100vw.
+-->
+<img id="sk-play1" src="images/EyesSkinPlay1Cut.webp"
+     srcset="images/EyesSkinPlay1Cut-800.webp 800w, images/EyesSkinPlay1Cut-1200.webp 1200w, images/EyesSkinPlay1Cut.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+<img id="sk-play2" src="images/EyesSkinPlay2Cut.webp"
+     srcset="images/EyesSkinPlay2Cut-800.webp 800w, images/EyesSkinPlay2Cut-1200.webp 1200w, images/EyesSkinPlay2Cut.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+<img id="sk-play3" src="images/EyesSkinPlay3Cut.webp"
+     srcset="images/EyesSkinPlay3Cut-800.webp 800w, images/EyesSkinPlay3Cut-1200.webp 1200w, images/EyesSkinPlay3Cut.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+
+<img id="sk-play-final1" src="images/EyesSkinPlay1CutFinal.webp"
+     srcset="images/EyesSkinPlay1CutFinal-800.webp 800w, images/EyesSkinPlay1CutFinal-1200.webp 1200w, images/EyesSkinPlay1CutFinal.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+<img id="sk-play-final2" src="images/EyesSkinPlay2CutFinal.webp"
+     srcset="images/EyesSkinPlay2CutFinal-800.webp 800w, images/EyesSkinPlay2CutFinal-1200.webp 1200w, images/EyesSkinPlay2CutFinal.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+<img id="sk-play-final3" src="images/EyesSkinPlay3CutFinal.webp"
+     srcset="images/EyesSkinPlay3CutFinal-800.webp 800w, images/EyesSkinPlay3CutFinal-1200.webp 1200w, images/EyesSkinPlay3CutFinal.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+
+<img id="sk-play4" src="images/EyesSkinPlay4Cut.webp"
+     srcset="images/EyesSkinPlay4Cut-800.webp 800w, images/EyesSkinPlay4Cut-1200.webp 1200w, images/EyesSkinPlay4Cut.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+<img id="sk-play-final4" src="images/EyesSkinPlay4CutFinal.webp"
+     srcset="images/EyesSkinPlay4CutFinal-800.webp 800w, images/EyesSkinPlay4CutFinal-1200.webp 1200w, images/EyesSkinPlay4CutFinal.webp 1920w"
+     sizes="100vw"
+     width="1064" height="792" alt="" decoding="async" fetchpriority="low">
+
+<button id="btn-close" aria-label="Fermer">
+  <svg viewBox="0 0 18 18" fill="none">
+    <line x1="2" y1="2" x2="16" y2="16"/>
+    <line x1="16" y1="2" x2="2" y2="16"/>
+  </svg>
+</button>
+
+<div id="caption-wrap" aria-label="Menu légende">
+  <aside id="caption" aria-label="Légende">
+    <p>L'échelle de Martin-Schultz est une échelle colorimétrique en 16&nbsp;tons utilisée en anthropologie physique pour déterminer approximativement la couleur des yeux.</p>
+  </aside>
+  <div id="caption-tab" role="button" aria-label="Afficher la légende" tabindex="0">
+    <svg id="caption-tab-svg" aria-hidden="true">
+      <!-- Fond noir découpé en V : masque la zone triangulaire sous la ligne -->
+      <path class="bg-path"   id="caption-bg"/>
+      <!-- Ligne unique avec flèche ∨ intégrée -->
+      <path class="line-path" id="caption-line"/>
+    </svg>
+  </div>
+</div>
+
+<div id="video-overlay">
+  <video id="voyeur-video" preload="none" playsinline></video>
+</div>
+
+<!-- Overlay texte (œil 4 — testimonial). Plein-écran noir, masque
+     entièrement la scène zoomée 120x. Apparaît après le zoom. -->
+<div id="text-overlay" role="dialog" aria-modal="true" aria-labelledby="text-quote">
+  <div class="text-content">
+    <span class="text-label">Témoignage</span>
+    <p id="text-quote" class="text-quote">« ça m'a beaucoup questionnée sur la manière dont on construit les récits historiques&nbsp;: qui décide de ce que l'on montre, de ce que l'on cache, et pourquoi&nbsp;? »</p>
+  </div>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+const IMG_W = 1920;
+const IMG_H = 1342;
+
+const R_WAKE  = 0.34;
+const R_CLOSE = 0.06;
+
+const MAX_MOVE   = 0.009;
+const LERP_SPEED = 0.055;
+
+const T_WAKE_FADE  = 400;
+const T_SLEEP_FADE = 700;
+
+const TREMBLE_AMP = 0.35;
+const TREMBLE_FREQ = [
+  { wx: 0.11 * Math.PI * 2, wy: 0.17 * Math.PI * 2, px: 0.0, py: 1.3 },
+  { wx: 0.23 * Math.PI * 2, wy: 0.09 * Math.PI * 2, px: 2.1, py: 0.7 },
+];
+const TREMBLE_INV_N = 1 / TREMBLE_FREQ.length;
+
+const T_PLAY_IN   = 600;
+const T_SCALE_IN  = 700;
+const SCALE_MAX   = 1.05;
+const T_PLAY_OUT  = 700;
+const T_SCALE_OUT = 800;
+const EASE_FADE_IN   = 'cubic-bezier(0.4, 0, 0.6, 1)';
+const EASE_FADE_OUT  = 'cubic-bezier(0.4, 0, 0.6, 1)';
+const EASE_SCALE_IN  = 'cubic-bezier(0.2, 0, 0.2, 1)';
+const EASE_SCALE_OUT = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+const ZOOM_DURATION = 3600;
+
+const ZOOM_EASE     = 'cubic-bezier(0.8, 0, 1, 1)';
+
+const GLOBE_EASE    = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+const T_LOADER_HOLD = 1200;
+const T_LOADER_FADE = 2000;
+
+const UNZOOM_DUR    = 1800;
+const UNZOOM_EASE   = 'cubic-bezier(0.4, 0, 0.2, 1)';
+
+const UNZOOM_GLOBE_DUR  = 1600;
+const UNZOOM_GLOBE_EASE = 'cubic-bezier(0.45, 0, 0.55, 1)';
+
+const GLOBE_PROGRESS_END  = 0.20;
+const T_CROSSFADE_START   = Math.round(ZOOM_DURATION * 0.16);
+const T_CROSSFADE_DUR     = 1200;
+const T_CROSSFADE_FINAL_START = Math.round(ZOOM_DURATION * 0.30);
+const T_CROSSFADE_FINAL_DUR   = 1800;
+const T_VIDEO_AFTER_ZOOM  = 400;
+
+const T_UNCROSSFADE_FINAL_DUR = Math.round(UNZOOM_DUR * 0.60);
+const T_UNCROSSFADE_CUT_DUR   = Math.round(UNZOOM_DUR * 0.24);
+const T_UNCROSSFADE_CUT_DELAY = T_UNCROSSFADE_FINAL_DUR;
+
+function lerp(a, b, t) { return a + (b - a) * t; }
+
+function setOpacity(el, v, ms, ease) {
+  el.style.transition = `opacity ${ms}ms ${ease || 'ease'}`;
+  el.style.opacity    = String(v);
+}
+
+function setScale(el, v, ms, ease) {
+  el.style.transition = `transform ${ms}ms ${ease}`;
+  el.style.transform  = `scale(${v})`;
+}
+
+function clearTransition(el) {
+  el.style.transition = '';
+}
+
+let rect = buildRect();
+
+function buildRect() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const ir = IMG_W / IMG_H;
+  const vr = vw / vh;
+  if (vr > ir) {
+
+    const rH = vh;
+    const rW = rH * ir;
+    return { rW, rH, oX: (vw - rW) / 2, oY: 0, vw, vh };
+  } else {
+
+    const rW = vw;
+    const rH = rW / ir;
+    return { rW, rH, oX: 0, oY: (vh - rH) / 2, vw, vh };
+  }
+}
+
+function imgToViewport(cx, cy) {
+  return {
+    x: rect.oX + rect.rW * cx,
+    y: rect.oY + rect.rH * cy,
+  };
+}
+
+function projectToViewport(cx, cy, S, sceneTx, sceneTy) {
+  const { vw, vh } = rect;
+  const O  = { x: vw / 2, y: vh / 2 };
+  const px = rect.oX + rect.rW * cx;
+  const py = rect.oY + rect.rH * cy;
+  return {
+    x: S * (px - O.x) + O.x + sceneTx,
+    y: S * (py - O.y) + O.y + sceneTy,
+  };
+}
+
+const EYES_CFG = [
+  {
+    wrap:'gw1', gN:'g1n', gP:'g1p', fixe:'gf1',
+    cx: 0.6162, cy: 0.3894,
+    hasVideo: true,
+    skPlayId: 'sk-play1',
+    skPlayFinalId: 'sk-play-final1',
+    videoSrc: 'media/Voyeur.mp4',
+    cutL: 1289.0 / 2600,
+    cutT:  482.4 / 1817,
+    cutW:  623.6 / 2600,
+    cutH:  462.1 / 1817,
+
+    cutFinalScale:    12.15,
+    cutFinalOX:        -2  / 2600,
+    cutFinalOY:        2  / 1817,
+    cutFinalStretchX:  0.95,
+    cutFinalStretchY:  1,
+
+    zoomScale:  120,
+    sceneCX:   0  / 2600,
+    sceneCY: +10  / 1817,
+    globeOX: -12  / 2600,
+    globeOY: +38  / 1817,
+  },
+  {
+    wrap:'gw2', gN:'g2n', gP:'g2p', fixe:'gf2',
+    cx: 0.4019, cy: 0.3795,
+    hasVideo: true,
+    skPlayId: 'sk-play2',
+    skPlayFinalId: 'sk-play-final2',
+    videoSrc: 'media/lea.mp4',
+    cutL:  727.8 / 2600,
+    cutT:  463.0 / 1817,
+    cutW:  644.0 / 2600,
+    cutH:  480.0 / 1817,
+    cutFinalScale:    12,
+    cutFinalOX:        1  / 2600,
+    cutFinalOY:        0  / 1817,
+    cutFinalStretchX:  0.95,
+    cutFinalStretchY:  1.05,
+
+    zoomScale:  120,
+    sceneCX:   0  / 2600,
+    sceneCY:  +18  / 1817,
+    globeOX:  +16  / 2600,
+    globeOY:  +30  / 1817,
+  },
+  {
+    wrap:'gw3', gN:'g3n', gP:'g3p', fixe:'gf3',
+    cx: 0.3994, cy: 0.6183,
+    hasVideo: true,
+    hasAudioOnly: true,
+    skPlayId: 'sk-play3',
+    skPlayFinalId: 'sk-play-final3',
+    videoSrc: null,
+    audioSrc: 'media/violence.mp3',
+    cutL:  723.2 / 2600,
+    cutT:  868.8 / 1817,
+    cutW:  637.8 / 2600,
+    cutH:  472.1 / 1817,
+    cutFinalScale:    12.1,
+    cutFinalOX:        -1  / 2600,
+    cutFinalOY:        1  / 1817,
+    cutFinalStretchX:  0.95,
+    cutFinalStretchY:  1,
+
+    zoomScale:  120,
+    sceneCX:   +2  / 2600,
+    sceneCY:  -12  / 1817,
+    globeOX:  +18  / 2600,
+    globeOY:  -22  / 1817,
+  },
+  {
+    /* Œil 4 — testimonial (texte au lieu de média).
+       Position : symétrique de l'œil 3 dans la grille de l'écrin
+       (case bas-droite). hasText:true déclenche l'overlay texte
+       après la séquence de zoom standard.
+       Les skPlayId/skPlayFinalId sont laissés null tant que
+       les images SkinPlay4Cut(.Final).webp ne sont pas fournies :
+       l'overlay texte plein-écran masque le scene zoomée 120x,
+       donc aucun glitch visuel n'est perceptible.                */
+    wrap:'gw4', gN:'g4n', gP:'g4p', fixe:'gf4',
+    cx: 0.6100, cy: 0.6266,
+    hasVideo: false,
+    hasAudioOnly: false,
+    hasText: true,
+    skPlayId: 'sk-play4',
+    skPlayFinalId: 'sk-play-final4',
+    videoSrc: null,
+    audioSrc: null,
+    /* Cut box mirrorée de l'œil 3 (au cas où les images skinPlay4
+       seraient ajoutées plus tard — la zone est déjà calibrée). */
+    cutL: 1280.0 / 2600,
+    cutT:  884.8 / 1817,
+    cutW:  628.8 / 2600,
+    cutH:  472.1 / 1817,
+    cutFinalScale:    12.1,
+    cutFinalOX:        +2  / 2600,
+    cutFinalOY:        +1  / 1817,
+    cutFinalStretchX:  0.90,
+    cutFinalStretchY:  0.95,
+
+    zoomScale:  120,
+    sceneCX:   9  / 2600,
+    sceneCY:  -14  / 1817,
+    globeOX:  0  / 2600,
+    globeOY:  -22  / 1817,
+  },
+];
+
+const eyes = EYES_CFG.map(cfg => {
+  const wEl  = document.getElementById(cfg.wrap);
+  const sEl  = wEl.querySelector('.globe-scale');
+  const gNEl = document.getElementById(cfg.gN);
+  const gPEl = document.getElementById(cfg.gP);
+  const gfEl = document.getElementById(cfg.fixe);
+  const skPlayEl      = cfg.skPlayId      ? document.getElementById(cfg.skPlayId)      : null;
+  const skPlayFinalEl = cfg.skPlayFinalId ? document.getElementById(cfg.skPlayFinalId) : null;
+
+  const stX  = (cfg.cutFinalStretchX != null) ? cfg.cutFinalStretchX : 1;
+  const stY  = (cfg.cutFinalStretchY != null) ? cfg.cutFinalStretchY : 1;
+  const oFX  = cfg.cutFinalOX || 0;
+  const oFY  = cfg.cutFinalOY || 0;
+
+  const irisX = cfg.cx + cfg.sceneCX;
+  const irisY = cfg.cy + cfg.sceneCY;
+  const cutFinalW = stX / cfg.cutFinalScale;
+  const cutFinalH = stY / cfg.cutFinalScale;
+  const cutFinalL = irisX + oFX - cutFinalW / 2;
+  const cutFinalT = irisY + oFY - cutFinalH / 2;
+
+  return {
+    wEl, sEl, gNEl, gPEl, gfEl,
+    cx: cfg.cx, cy: cfg.cy,
+    hasVideo: cfg.hasVideo,
+    hasAudioOnly: cfg.hasAudioOnly || false,
+    hasText: cfg.hasText || false,
+    skPlayEl,
+    skPlayFinalEl,
+    videoSrc: cfg.videoSrc,
+    audioSrc: cfg.audioSrc || null,
+    cutL: cfg.cutL, cutT: cfg.cutT, cutW: cfg.cutW, cutH: cfg.cutH,
+    cutFinalScale: cfg.cutFinalScale,
+    cutFinalL, cutFinalT, cutFinalW, cutFinalH,
+    zoomScale: cfg.zoomScale,
+    sceneCX: cfg.sceneCX, sceneCY: cfg.sceneCY,
+    globeOX: cfg.globeOX, globeOY: cfg.globeOY,
+
+    tx: 0, ty: 0,
+    vx: 0, vy: 0,
+
+    state: 'idle',
+    wasInWake:  false,
+    wasInClose: false,
+    isPlay: false,
+    tremblePhase: Math.random() * Math.PI * 2,
+    _lastTransform: '',
+  };
+});
+
+const eye1 = eyes[0];
+const eye2 = eyes[1];
+const eye3 = eyes[2];
+const eye4 = eyes[3];
+
+const scene    = document.getElementById('scene');
+const btnClose = document.getElementById('btn-close');
+
+/* Overlay témoignage (œil 4) */
+const textOverlay = document.getElementById('text-overlay');
+
+const captionWrapEl  = document.getElementById('caption-wrap');
+const captionEl      = document.getElementById('caption');
+const captionTabEl   = document.getElementById('caption-tab');
+const captionSvg     = document.getElementById('caption-tab-svg');
+const captionLine    = document.getElementById('caption-line');
+const captionBg      = document.getElementById('caption-bg');
+
+/*
+  Géométrie du SVG :
+  - Hauteur SVG = TIP_H (profondeur de la flèche)
+  - La ligne va de (0,0) → descend en V au centre → (W,0)
+  - Le fond noir remplit le rectangle jusqu'à cette ligne
+    = path qui part du coin haut-gauche, longe la ligne, revient
+*/
+const TIP_W = 60;  /* demi-largeur du rectangle haut de la languette px */
+const MH    = 10;  /* hauteur de la partie rectangulaire (les "murs") px */
+const TIP_H = 28;  /* hauteur totale jusqu'à la pointe px                */
+
+function buildCaptionPaths() {
+  const W  = window.innerWidth;
+  const cx = W / 2;
+
+  captionSvg.setAttribute('viewBox', `0 0 ${W} ${TIP_H}`);
+  captionSvg.setAttribute('width',  W);
+  captionSvg.setAttribute('height', TIP_H);
+
+  /* ── Forme "maison à l'envers" ────────────────────────────
+     Ligne horizontale, descend en murs verticaux, épaulements,
+     puis converge vers la pointe centrale.
+     Points :
+       (0,0) → (cx-TIP_W,0)          ligne gauche
+       (cx-TIP_W, MH)                 mur gauche
+       (cx, TIP_H)                    pointe
+       (cx+TIP_W, MH)                 mur droit
+       (cx+TIP_W, 0)                  remontée droite
+       (W, 0)                         ligne droite           */
+  const shape = [
+    `M 0,0`,
+    `L ${cx - TIP_W},0`,
+    `L ${cx - TIP_W},${MH}`,
+    `L ${cx},${TIP_H}`,
+    `L ${cx + TIP_W},${MH}`,
+    `L ${cx + TIP_W},0`,
+    `L ${W},0`,
+  ].join(' ');
+
+  captionLine.setAttribute('d', shape);
+
+  const len = captionLine.getTotalLength();
+  captionLine.style.setProperty('--line-len', len);
+  captionLine.style.strokeDasharray = len;
+  if (!captionLine.classList.contains('drawn')) {
+    captionLine.style.strokeDashoffset = len;
+  }
+
+  /* Fond : même forme fermée */
+  captionBg.setAttribute('d',
+    `M ${cx - TIP_W},0 L ${cx - TIP_W},${MH} L ${cx},${TIP_H} L ${cx + TIP_W},${MH} L ${cx + TIP_W},0 Z`
+  );
+
+  /* --menu-h = hauteur du fond texte.
+     Le translateY au repos = -(menu-h + 2vh), donc la ligne
+     apparaît exactement à 2vh du bord supérieur.            */
+  const menuH = captionEl.getBoundingClientRect().height;
+  if (menuH > 0) captionWrapEl.style.setProperty('--menu-h', menuH + 'px');
+}
+
+/*
+  Construction du SVG du menu : différée hors du chemin critique.
+  Raison : getTotalLength() + getBoundingClientRect() forcent un reflow
+  synchrone, et le menu n'est de toute façon pas visible (opacity:0)
+  avant la fin du chargement des images.
+  On recalcule aussi après chargement de la police (la hauteur du texte
+  peut changer quand Cormorant Garamond remplace la police de substitution,
+  ce qui est particulièrement visible sur mobile en fenêtre réduite).
+*/
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(buildCaptionPaths, { timeout: 1500 });
+} else {
+  setTimeout(buildCaptionPaths, 0);
+}
+/* Recalcul après chargement de la font (évite le décalage FOUT) */
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(buildCaptionPaths);
+}
+window.addEventListener('resize', buildCaptionPaths, { passive: true });
+
+/* ── Ouverture / fermeture ─────────────────────────────────── */
+function isCaptionLocked() { return zoomed || videoPlaying; }
+
+function openCaption() {
+  if (isCaptionLocked()) return;
+  captionWrapEl.classList.add('expanded');
+}
+function closeCaption() {
+  captionWrapEl.classList.remove('expanded');
+}
+
+captionWrapEl.addEventListener('mouseenter', openCaption,  { passive: true });
+captionWrapEl.addEventListener('mouseleave', closeCaption, { passive: true });
+
+captionTabEl.addEventListener('click', () => {
+  captionWrapEl.classList.contains('expanded') ? closeCaption() : openCaption();
+});
+captionTabEl.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    captionWrapEl.classList.contains('expanded') ? closeCaption() : openCaption();
+  }
+});
+
+/* ── Séquence au chargement ───────────────────────────────────
+   1. La ligne se trace (1400ms)
+   2. Le fond noir apparaît en fondu (500ms)
+   3. Le wrapper devient interactif (.ready)                    */
+function animateCaptionLine() {
+  captionLine.classList.add('drawn');
+  setTimeout(() => { if (!zoomed && !videoPlaying) captionBg.classList.add('shown'); }, 1200);
+  setTimeout(() => { if (!zoomed && !videoPlaying) captionWrapEl.classList.add('ready'); }, 1800);
+}
+
+const videoOverlay = document.getElementById('video-overlay');
+const videoEl      = document.getElementById('voyeur-video');
+
+const T_VIDEO_FADE_IN  = 800;
+const T_VIDEO_FADE_OUT = 600;
+
+let videoPlaying = false;
+
+let zoomed     = false;
+let zoomedEye  = null;
+let _unzooming = false;
+let _tBtnShow = null, _tVideo = null;
+
+let _zoomSceneTx = 0;
+let _zoomSceneTy = 0;
+
+function doWake(eye) {
+  eye.state = 'awake';
+  setOpacity(eye.gfEl, 0, T_WAKE_FADE, 'ease-in');
+  wakeRAF();
+}
+
+function doSleep(eye) {
+  if (zoomed) return;
+  eye.state  = 'idle';
+  eye.isPlay = false;
+  setOpacity(eye.gPEl, 0, T_PLAY_OUT,  EASE_FADE_OUT);
+  setScale(eye.sEl, 1,    T_SCALE_OUT, EASE_SCALE_OUT);
+  eye.wEl.classList.remove('clickable');
+  setOpacity(eye.gfEl, 1, T_SLEEP_FADE, 'ease-out');
+  eye.tx = 0; eye.ty = 0;
+}
+
+function doEnterPlay(eye) {
+  if (eye.state === 'play' || zoomed) return;
+  eye.state  = 'play';
+  eye.isPlay = true;
+  setOpacity(eye.gPEl, 1, T_PLAY_IN,  EASE_FADE_IN);
+  setScale(eye.sEl, SCALE_MAX, T_SCALE_IN, EASE_SCALE_IN);
+
+  eye.wEl.classList.add('clickable');
+}
+
+function doExitPlay(eye) {
+  if (eye.state !== 'play' || zoomed) return;
+  eye.state  = 'awake';
+  eye.isPlay = false;
+  setOpacity(eye.gPEl, 0, T_PLAY_OUT,  EASE_FADE_OUT);
+  setScale(eye.sEl, 1,    T_SCALE_OUT, EASE_SCALE_OUT);
+  eye.wEl.classList.remove('clickable');
+  wakeRAF();
+}
+
+/*
+  Audio lazy-init : éviter de créer l'élément avant qu'il soit utilisé,
+  pour ne pas pénaliser le back/forward cache du navigateur.
+  Singleton — une seule instance partagée pour tous les œils audio.
+*/
+let _audioEl = null;
+function getAudioEl() {
+  if (!_audioEl) _audioEl = new Audio();
+  return _audioEl;
+}
+
+/* ============================================================
+   GESTION DES SOUS-TITRES SRT
+   ============================================================ */
+
+const srtContainer = document.getElementById('srt-subtitles');
+let srtCues = [];
+let srtRafId = 0;
+let srtActive = false;
+
+/** Parse un fichier SRT en tableau de cues {start, end, text} */
+function parseSRT(raw) {
+  const cues = [];
+  const blocks = raw.trim().split(/\n\s*\n/);
+  const timeRe = /^(\d{2}):(\d{2}):(\d{2}),(\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2}),(\d{3})/;
+
+  for (const block of blocks) {
+    const lines = block.trim().split(/\n/);
+    if (lines.length < 2) continue;
+
+    // Trouver la ligne avec le timecode
+    let timeLine = -1;
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].includes('-->')) { timeLine = i; break; }
+    }
+    if (timeLine === -1) continue;
+
+    const m = lines[timeLine].match(timeRe);
+    if (!m) continue;
+
+    const toMs = (h, min, s, ms) =>
+      (parseInt(h, 10) * 3600 + parseInt(min, 10) * 60 + parseInt(s, 10)) * 1000 + parseInt(ms, 10);
+
+    const start = toMs(m[1], m[2], m[3], m[4]);
+    const end   = toMs(m[5], m[6], m[7], m[8]);
+    const text  = lines.slice(timeLine + 1).join('\n').trim();
+
+    if (text) cues.push({ start, end, text });
+  }
+  return cues.sort((a, b) => a.start - b.start);
+}
+
+/** Charge le fichier SRT au démarrage */
+function loadSRT(url) {
+  return fetch(url)
+    .then(r => r.ok ? r.text() : Promise.reject(new Error('SRT non trouvé')))
+    .then(raw => { srtCues = parseSRT(raw); })
+    .catch(err => { console.warn('SRT load error:', err.message); srtCues = []; });
+}
+
+/* Chargement paresseux et idempotent : on ne télécharge SRT + police qu'une seule fois,
+   et seulement quand c'est utile. Hors chemin critique. */
+let _srtLoadPromise = null;
+function ensureSRTLoaded() {
+  if (_srtLoadPromise) return _srtLoadPromise;
+  _srtLoadPromise = loadSRT('media/violence.srt');
+  return _srtLoadPromise;
+}
+
+let _fontLoaded = false;
+function ensureSubtitleFont() {
+  // Police désormais chargée via <link media="print"> dans le <head> — non-bloquante.
+  // Cette fonction est conservée pour compatibilité mais n'injecte plus rien.
+}
+
+/** Met à jour l'affichage des sous-titres selon le temps audio */
+function updateSRT(currentTimeMs) {
+  if (!srtCues.length) return;
+
+  const t = Math.round(currentTimeMs);
+  const cue = srtCues.find(c => t >= c.start && t < c.end);
+
+  if (cue) {
+    // Afficher le sous-titre
+    const lines = cue.text.split(/\n/);
+    srtContainer.innerHTML = lines.map(l => `<span class="srt-line">${escapeHtml(l)}</span>`).join('');
+    srtContainer.classList.add('visible');
+  } else {
+    srtContainer.classList.remove('visible');
+    srtContainer.innerHTML = '';
+  }
+}
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+/** Boucle RAF pour synchroniser les sous-titres avec l'audio */
+function srtTick() {
+  if (!srtActive) return;
+
+  let currentTime = 0;
+  if (zoomedEye && zoomedEye.hasAudioOnly) {
+    // _audioEl existe forcément ici : startSRT() n'est appelé qu'après getAudioEl()
+    currentTime = (_audioEl ? _audioEl.currentTime : 0) * 1000;
+  } else if (zoomedEye && zoomedEye.hasVideo && !zoomedEye.hasAudioOnly) {
+    currentTime = videoEl.currentTime * 1000;
+  }
+
+  updateSRT(currentTime);
+  srtRafId = requestAnimationFrame(srtTick);
+}
+
+function startSRT() {
+  if (srtActive) return;
+  srtActive = true;
+  srtTick();
+}
+
+function stopSRT() {
+  srtActive = false;
+  cancelAnimationFrame(srtRafId);
+  srtRafId = 0;
+  srtContainer.classList.remove('visible');
+  srtContainer.innerHTML = '';
+}
+
+/* ============================================================
+   FIN GESTION SRT
+   ============================================================ */
+
+function openMedia(eye) {
+  if (!zoomed || zoomedEye !== eye) return;
+  videoPlaying = true;
+  // Filet de sécurité : menu définitivement masqué pendant la lecture
+  captionWrapEl.classList.remove('visible', 'expanded', 'ready');
+
+  if (eye.hasText) {
+    /* Œil 4 — Témoignage. Pas de média à charger : on affiche
+       l'overlay texte qui couvre toute la scène (comme le video-
+       overlay couvre la scène pour les œils vidéo).               */
+    textOverlay.classList.add('active');
+    /* requestAnimationFrame pour s'assurer que le navigateur applique
+       d'abord display/active avant la transition d'opacité.          */
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!videoPlaying) return;
+        textOverlay.classList.add('visible');
+      });
+    });
+    return;
+  }
+
+  if (eye.hasAudioOnly) {
+
+    // Filet de sécurité : si l'utilisateur clique avant le chargement idle, on force ici.
+    // Idempotent — ne refait pas le fetch si déjà chargé.
+    ensureSRTLoaded();
+    // La police n'est utile que pour les sous-titres : on la charge ici, pas au boot.
+    ensureSubtitleFont();
+
+    const audioEl = getAudioEl();
+    if (audioEl.src !== eye.audioSrc) {
+      audioEl.src = eye.audioSrc;
+    }
+    audioEl.currentTime = 0;
+    audioEl.play().catch(() => {});
+    audioEl.onended = () => {
+      if (videoPlaying && zoomedEye === eye) closeMedia(eye);
+    };
+    // Démarrer les sous-titres SRT pour l'audio
+    startSRT();
+  } else {
+
+    if (videoEl.src !== eye.videoSrc) {
+      videoEl.src = eye.videoSrc;
+    }
+    videoOverlay.classList.add('active');
+    videoOverlay.style.transition = `opacity ${T_VIDEO_FADE_IN}ms ease`;
+    videoOverlay.style.opacity    = '1';
+    setTimeout(() => {
+      if (!videoPlaying) return;
+      videoEl.currentTime = 0;
+      const p = videoEl.play();
+      if (p !== undefined) {
+        p.catch(() => {
+          videoOverlay.addEventListener('click', () => videoEl.play(), { once: true });
+        });
+      }
+    }, 80);
+  }
+}
+
+function closeMedia(eye) {
+  if (!videoPlaying) return;
+  videoPlaying = false;
+
+  // Arrêter les sous-titres
+  stopSRT();
+
+  if (eye.hasText) {
+    /* Œil 4 — Fermeture du témoignage : fade-out de l'overlay texte
+       puis dézoom standard. La durée du fade matche T_VIDEO_FADE_OUT
+       pour cohérence avec les œils vidéo.                            */
+    textOverlay.classList.remove('visible');
+    setTimeout(() => {
+      textOverlay.classList.remove('active');
+      doUnzoom(eye);
+    }, T_VIDEO_FADE_OUT);
+    return;
+  }
+
+  if (eye.hasAudioOnly) {
+
+    if (_audioEl) {
+      _audioEl.pause();
+      _audioEl.currentTime = 0;
+      _audioEl.onended = null;
+    }
+    doUnzoom(eye);
+  } else {
+
+    videoEl.pause();
+    videoOverlay.style.transition = `opacity ${T_VIDEO_FADE_OUT}ms ease`;
+    videoOverlay.style.opacity    = '0';
+    setTimeout(() => {
+      videoOverlay.classList.remove('active');
+      videoEl.currentTime = 0;
+      doUnzoom(eye);
+    }, T_VIDEO_FADE_OUT);
+  }
+}
+
+videoEl.addEventListener('ended', () => {
+  if (videoPlaying && zoomedEye && !zoomedEye.hasAudioOnly) closeMedia(zoomedEye);
+});
+
+function computeZoomTransform(eye) {
+  const { vw, vh, rW, rH, oX, oY } = rect;
+  const S = eye.zoomScale;
+
+  const irisX = oX + rW * (eye.cx + eye.sceneCX);
+  const irisY = oY + rH * (eye.cy + eye.sceneCY);
+
+  const tx = S * (vw / 2 - irisX);
+  const ty = S * (vh / 2 - irisY);
+  return { S, tx, ty };
+}
+
+function applyZoomTransforms(eye, animated) {
+  const { S, tx, ty } = computeZoomTransform(eye);
+
+  const globeDur = Math.round(ZOOM_DURATION * GLOBE_PROGRESS_END);
+
+  const trScene = animated ? `transform ${ZOOM_DURATION}ms ${ZOOM_EASE}` : 'none';
+
+  const trGlobe = animated ? `transform ${globeDur}ms ${GLOBE_EASE}`     : 'none';
+
+  scene.style.transition = trScene;
+  scene.style.transform  = `translate(${tx.toFixed(2)}px,${ty.toFixed(2)}px) scale(${S})`;
+  _zoomSceneTx = tx;
+  _zoomSceneTy = ty;
+
+  const gvx = eye.globeOX * rect.rW;
+  const gvy = eye.globeOY * rect.rH;
+  eye.wEl.style.transition = trGlobe;
+  eye.wEl.style.transform  = `translate3d(${gvx.toFixed(4)}px,${gvy.toFixed(4)}px,0)`;
+  eye._lastTransform        = eye.wEl.style.transform;
+  eye.vx = gvx; eye.vy = gvy;
+  eye.tx = gvx; eye.ty = gvy;
+
+  if (eye.skPlayEl) {
+    applyZoomToSkPlay(eye, S, tx, ty, animated);
+  }
+}
+
+function setupSkLayerInitial(el, cutL, cutT, cutW, cutH) {
+  if (!el) return;
+  const initLeft = rect.oX + rect.rW * cutL;
+  const initTop  = rect.oY + rect.rH * cutT;
+  const initW    = rect.rW * cutW;
+  const initH    = rect.rH * cutH;
+
+  el.style.transition = 'none';
+  el.style.left   = initLeft.toFixed(2) + 'px';
+  el.style.top    = initTop.toFixed(2)  + 'px';
+  el.style.width  = initW.toFixed(2)    + 'px';
+  el.style.height = initH.toFixed(2)    + 'px';
+  el.style.transform = 'translate3d(0,0,0) scale(1)';
+  el.style.opacity = '0';
+  void el.offsetHeight;
+}
+
+function applyZoomToSkLayer(el, cutL, cutT, cutW, cutH, S, sceneTx, sceneTy, animated, crossfadeDelayMs, crossfadeDurMs) {
+  if (!el) return;
+
+  const initLeft = rect.oX + rect.rW * cutL;
+  const initTop  = rect.oY + rect.rH * cutT;
+
+  const finalTL = projectToViewport(cutL, cutT, S, sceneTx, sceneTy);
+  const deltaX = finalTL.x - initLeft;
+  const deltaY = finalTL.y - initTop;
+
+  if (animated) {
+
+    el.style.transition =
+      `transform ${ZOOM_DURATION}ms ${ZOOM_EASE},` +
+      `opacity ${crossfadeDurMs}ms ease ${crossfadeDelayMs}ms`;
+    el.style.transform = `translate3d(${deltaX.toFixed(2)}px,${deltaY.toFixed(2)}px,0) scale(${S})`;
+    el.style.opacity = '1';
+  } else {
+
+    el.style.transition = 'none';
+    el.style.left   = initLeft.toFixed(2) + 'px';
+    el.style.top    = initTop.toFixed(2)  + 'px';
+    el.style.width  = (rect.rW * cutW).toFixed(2) + 'px';
+    el.style.height = (rect.rH * cutH).toFixed(2) + 'px';
+    el.style.transform = `translate3d(${deltaX.toFixed(2)}px,${deltaY.toFixed(2)}px,0) scale(${S})`;
+    el.style.opacity = '1';
+  }
+}
+
+function setupSkPlayInitial(eye) {
+  setupSkLayerInitial(eye.skPlayEl,      eye.cutL,      eye.cutT,      eye.cutW,      eye.cutH);
+  setupSkLayerInitial(eye.skPlayFinalEl, eye.cutFinalL, eye.cutFinalT, eye.cutFinalW, eye.cutFinalH);
+}
+
+function applyZoomToSkPlay(eye, S, sceneTx, sceneTy, animated) {
+  applyZoomToSkLayer(
+    eye.skPlayEl, eye.cutL, eye.cutT, eye.cutW, eye.cutH,
+    S, sceneTx, sceneTy, animated,
+    T_CROSSFADE_START, T_CROSSFADE_DUR
+  );
+  applyZoomToSkLayer(
+    eye.skPlayFinalEl, eye.cutFinalL, eye.cutFinalT, eye.cutFinalW, eye.cutFinalH,
+    S, sceneTx, sceneTy, animated,
+    T_CROSSFADE_FINAL_START, T_CROSSFADE_FINAL_DUR
+  );
+}
+
+function doZoom(eye) {
+  zoomedEye  = eye;
+  eye.state  = 'zoomed';
+  eye.wEl.classList.remove('clickable');
+
+  // Légende : disparaît pendant le zoom (ready retiré pour couper pointer-events)
+  captionWrapEl.classList.remove('visible', 'expanded', 'ready');
+
+  scene.style.willChange   = 'transform';
+  eye.wEl.style.willChange = 'transform';
+  if (eye.skPlayEl) {
+    eye.skPlayEl.style.willChange = 'transform, opacity';
+  }
+  if (eye.skPlayFinalEl) {
+    eye.skPlayFinalEl.style.willChange = 'transform, opacity';
+  }
+
+  eyes.forEach(e => {
+    if (e !== eye) { e.tx = 0; e.ty = 0; e.vx = 0; e.vy = 0; }
+  });
+
+  setupSkPlayInitial(eye);
+
+  requestAnimationFrame(() => {
+    zoomed = true;
+
+    applyZoomTransforms(eye, true);
+
+    _tBtnShow = setTimeout(() => {
+      btnClose.classList.add('visible');
+    }, ZOOM_DURATION + 100);
+
+    if (eye.hasVideo || eye.hasAudioOnly || eye.hasText) {
+      _tVideo = setTimeout(() => {
+        _tVideo = null;
+        openMedia(eye);
+      }, ZOOM_DURATION + T_VIDEO_AFTER_ZOOM);
+    }
+  });
+}
+
+function doUnzoom(eye) {
+  if (_unzooming) return;
+  _unzooming    = true;
+
+  // Arrêter les sous-titres immédiatement
+  stopSRT();
+
+  clearTimeout(_tBtnShow); _tBtnShow = null;
+  clearTimeout(_tVideo);   _tVideo   = null;
+
+  btnClose.classList.remove('visible');
+
+  const { S, tx: sceneTx, ty: sceneTy } = computeZoomTransform(eye);
+
+  function freezeLayerAtZoomEnd(el, cutL, cutT) {
+    if (!el) return;
+    const initLeft = rect.oX + rect.rW * cutL;
+    const initTop  = rect.oY + rect.rH * cutT;
+    const finalTL  = projectToViewport(cutL, cutT, S, sceneTx, sceneTy);
+    const deltaX   = finalTL.x - initLeft;
+    const deltaY   = finalTL.y - initTop;
+    el.style.transition = 'none';
+    el.style.transform  = `translate3d(${deltaX.toFixed(2)}px,${deltaY.toFixed(2)}px,0) scale(${S})`;
+    el.style.opacity    = '1';
+    void el.offsetHeight;
+  }
+
+  function animateLayerOut(el, opDur, opDelay) {
+    if (!el) return;
+    el.style.transition =
+      `transform ${UNZOOM_DUR}ms ${UNZOOM_EASE},` +
+      `opacity   ${opDur}ms ease ${opDelay}ms`;
+    el.style.transform = 'translate3d(0,0,0) scale(1)';
+    el.style.opacity   = '0';
+  }
+
+  freezeLayerAtZoomEnd(eye.skPlayFinalEl, eye.cutFinalL, eye.cutFinalT);
+  freezeLayerAtZoomEnd(eye.skPlayEl,      eye.cutL,      eye.cutT);
+
+  scene.style.transition = 'none';
+  scene.style.transform  = `translate(${sceneTx.toFixed(2)}px,${sceneTy.toFixed(2)}px) scale(${S})`;
+  void scene.offsetHeight;
+
+  const gvx = eye.globeOX * rect.rW;
+  const gvy = eye.globeOY * rect.rH;
+  eye.wEl.style.transition = 'none';
+  eye.wEl.style.transform  = `translate3d(${gvx.toFixed(4)}px,${gvy.toFixed(4)}px,0)`;
+  eye._lastTransform        = eye.wEl.style.transform;
+  eye.vx = gvx; eye.vy = gvy;
+  eye.tx = gvx; eye.ty = gvy;
+
+  requestAnimationFrame(() => {
+
+    scene.style.transition = `transform ${UNZOOM_DUR}ms ${UNZOOM_EASE}`;
+    scene.style.transform  = 'translate(0px,0px) scale(1)';
+    _zoomSceneTx = 0;
+    _zoomSceneTy = 0;
+
+    animateLayerOut(eye.skPlayFinalEl, T_UNCROSSFADE_FINAL_DUR, 0);
+
+    animateLayerOut(eye.skPlayEl, T_UNCROSSFADE_CUT_DUR, T_UNCROSSFADE_CUT_DELAY);
+  });
+
+  setTimeout(() => {
+    zoomed        = false;
+    zoomedEye     = null;
+    _unzooming    = false;
+    eye.tx = 0; eye.ty = 0;
+    wakeRAF();
+  }, UNZOOM_DUR);
+
+  setTimeout(() => {
+    scene.style.transition   = '';
+    scene.style.transform    = '';
+    scene.style.willChange   = '';
+    eye.wEl.style.willChange = '';
+
+    [eye.skPlayEl, eye.skPlayFinalEl].forEach(el => {
+      if (!el) return;
+      el.style.willChange = '';
+      el.style.transition = '';
+      el.style.transform  = '';
+      el.style.opacity    = '';
+      el.style.left = el.style.top = el.style.width = el.style.height = '';
+    });
+
+    eyes.forEach(e => { e._lastTransform = ''; });
+
+    const sx = rect.oX + rect.rW * eye.cx;
+    const sy = rect.oY + rect.rH * eye.cy;
+    const dx = mouseX - sx;
+    const dy = mouseY - sy;
+    const d2 = mouseOnPage ? dx * dx + dy * dy : Infinity;
+    const dim = Math.min(rect.vw, rect.vh);
+    const rWakeSq  = (dim * R_WAKE)  ** 2;
+    const rCloseSq = (dim * R_CLOSE) ** 2;
+
+    if (d2 < rCloseSq && mouseOnPage) {
+      eye.state  = 'play';
+      eye.isPlay = true;
+      eye.wEl.classList.add('clickable');
+    } else if (d2 < rWakeSq && mouseOnPage) {
+      eye.state = 'awake';
+    } else {
+      eye.state  = 'idle';
+      eye.isPlay = false;
+      setOpacity(eye.gPEl, 0, T_PLAY_OUT,  EASE_FADE_OUT);
+      setScale(eye.sEl, 1,    T_SCALE_OUT, EASE_SCALE_OUT);
+      setOpacity(eye.gfEl, 1, T_SLEEP_FADE, 'ease-out');
+    }
+
+    eye.wasInWake  = d2 < rWakeSq  && mouseOnPage;
+    eye.wasInClose = d2 < rCloseSq && mouseOnPage;
+
+    wakeRAF();
+
+    // Légende : réapparaît après le dézoom avec l'animation complète
+    // Guard : ne pas afficher si un nouveau zoom/média a démarré entre-temps
+    setTimeout(() => {
+      if (zoomed || videoPlaying) return;
+      captionLine.classList.remove('drawn');
+      captionBg.classList.remove('shown');
+      captionWrapEl.classList.remove('ready');
+      void captionLine.getBoundingClientRect();
+      captionWrapEl.classList.add('visible');
+      setTimeout(() => { if (!zoomed && !videoPlaying) animateCaptionLine(); }, 80);
+    }, 500);
+  }, UNZOOM_DUR + 200);
+}
+
+eye1.wEl.addEventListener('click', () => {
+  if (eye1.state === 'play' && !zoomed) doZoom(eye1);
+});
+
+eye2.wEl.addEventListener('click', () => {
+  if (eye2.state === 'play' && !zoomed) doZoom(eye2);
+});
+
+eye3.wEl.addEventListener('click', () => {
+  if (eye3.state === 'play' && !zoomed) doZoom(eye3);
+});
+
+eye4.wEl.addEventListener('click', () => {
+  if (eye4.state === 'play' && !zoomed) doZoom(eye4);
+});
+
+btnClose.addEventListener('click', () => {
+  if (!zoomedEye) return;
+  if (videoPlaying) {
+    closeMedia(zoomedEye);
+  } else {
+    doUnzoom(zoomedEye);
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !zoomedEye) return;
+  if (videoPlaying) {
+    closeMedia(zoomedEye);
+  } else {
+    doUnzoom(zoomedEye);
+  }
+});
+
+function trembleOffset(eye, t) {
+  let ox = 0, oy = 0;
+  const p = eye.tremblePhase;
+  const n = TREMBLE_FREQ.length;
+  for (let i = 0; i < n; i++) {
+    const f = TREMBLE_FREQ[i];
+    ox += Math.sin(t * f.wx + f.px + p) * TREMBLE_AMP;
+    oy += Math.sin(t * f.wy + f.py + p) * TREMBLE_AMP;
+  }
+  return { ox: ox * TREMBLE_INV_N, oy: oy * TREMBLE_INV_N };
+}
+
+let mouseX      = -99999;
+let mouseY      = -99999;
+let mouseOnPage = false;
+let mouseDirty  = false;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  mouseOnPage = true;
+  mouseDirty  = true;
+  wakeRAF();
+}, { passive: true });
+
+document.addEventListener('mouseleave', () => {
+  mouseOnPage = false;
+  mouseDirty  = true;
+  if (zoomed) return;
+  for (let i = 0; i < eyes.length; i++) {
+    const eye = eyes[i];
+    eye.wasInWake  = false;
+    eye.wasInClose = false;
+    if (eye.state === 'awake' || eye.state === 'play') doSleep(eye);
+  }
+  wakeRAF();
+});
+
+let _resizeTimer = null;
+
+window.addEventListener('resize', () => {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(() => {
+    rect = buildRect();
+    if (zoomed && zoomedEye) {
+      applyZoomTransforms(zoomedEye, false);
+    }
+    wakeRAF();
+  }, 60);
+}, { passive: true });
+
+let _rafId      = 0;
+let _rafActive  = false;
+const VEL_EPSILON = 0.02;
+
+function wakeRAF() {
+  if (_rafActive) return;
+  _rafActive = true;
+  _rafId = requestAnimationFrame(tick);
+}
+
+function tick(timestamp) {
+  const t = timestamp * 0.001;
+
+  const { oX, oY, rW, rH, vw, vh } = rect;
+  const dim      = Math.min(vw, vh);
+  const rWakePx  = dim * R_WAKE;
+  const rClosePx = dim * R_CLOSE;
+  const rWakeSq  = rWakePx  * rWakePx;
+  const rCloseSq = rClosePx * rClosePx;
+  const maxMovePx = vw * MAX_MOVE;
+
+  mouseDirty = false;
+  let needsMoreFrames = false;
+
+  for (let i = 0; i < eyes.length; i++) {
+    const eye = eyes[i];
+
+    if (zoomed && eye === zoomedEye) continue;
+
+    const sx  = oX + rW * eye.cx;
+    const sy  = oY + rH * eye.cy;
+
+    const ddx = mouseX - sx;
+    const ddy = mouseY - sy;
+    const d2  = (mouseOnPage && !zoomed) ? ddx * ddx + ddy * ddy : Infinity;
+
+    const inWake  = d2 < rWakeSq;
+    const inClose = d2 < rCloseSq;
+
+    const enteredWake  =  inWake  && !eye.wasInWake;
+    const exitedWake   = !inWake  &&  eye.wasInWake;
+    const enteredClose =  inClose && !eye.wasInClose;
+    const exitedClose  = !inClose &&  eye.wasInClose;
+
+    eye.wasInWake  = inWake;
+    eye.wasInClose = inClose;
+
+    if (!zoomed) {
+      if      (enteredWake  && eye.state === 'idle' ) doWake(eye);
+      else if (exitedWake   && eye.state === 'awake') doSleep(eye);
+      else if (exitedWake   && eye.state === 'play' ) doSleep(eye);
+      else if (enteredClose && eye.state === 'awake') doEnterPlay(eye);
+      else if (exitedClose  && eye.state === 'play' ) doExitPlay(eye);
+    }
+
+    const isActive = eye.state !== 'idle';
+    if (isActive && inWake && d2 > 0 && !zoomed) {
+      const dist  = Math.sqrt(d2);
+      const inf   = 1 - dist / rWakePx;
+      const scale = maxMovePx * inf / dist;
+      eye.tx = ddx * scale;
+      eye.ty = ddy * scale;
+    } else {
+      eye.tx = 0;
+      eye.ty = 0;
+    }
+
+    let noiseX = 0, noiseY = 0;
+    if (isActive && !zoomed) {
+      const tr = trembleOffset(eye, t);
+      noiseX = tr.ox;
+      noiseY = tr.oy;
+    }
+
+    eye.vx = lerp(eye.vx, eye.tx + noiseX, LERP_SPEED);
+    eye.vy = lerp(eye.vy, eye.ty + noiseY, LERP_SPEED);
+
+    const tx = ((eye.vx * 100) | 0) / 100;
+    const ty = ((eye.vy * 100) | 0) / 100;
+    const tStr = `translate3d(${tx}px,${ty}px,0)`;
+
+    if (eye._lastTransform !== tStr) {
+      eye.wEl.style.transform = tStr;
+      eye._lastTransform = tStr;
+    }
+
+    if (isActive) {
+      needsMoreFrames = true;
+    } else {
+      const dvx = Math.abs(eye.vx - eye.tx);
+      const dvy = Math.abs(eye.vy - eye.ty);
+      if (dvx > VEL_EPSILON || dvy > VEL_EPSILON) {
+        needsMoreFrames = true;
+      }
+    }
+  }
+
+  if (needsMoreFrames || mouseDirty) {
+    _rafId = requestAnimationFrame(tick);
+  } else {
+    _rafActive = false;
+  }
+}
+
+wakeRAF();
+
+const criticalImages = Array.from(
+  document.querySelectorAll('img.layer:not(.globe-play)')
+);
+const deferredImages = Array.from(
+  document.querySelectorAll(
+    'img.globe-play,' +
+    '#sk-play1,#sk-play2,#sk-play3,#sk-play4,' +
+    '#sk-play-final1,#sk-play-final2,#sk-play-final3,#sk-play-final4'
+  )
+);
+
+const loaderFill = document.getElementById('loader-fill');
+const loaderEl   = document.getElementById('loader');
+let loadedN = 0;
+const total = criticalImages.length;
+
+function bumpProgress() {
+  loadedN++;
+  loaderFill.style.width = ((loadedN / total) * 100) + '%';
+}
+
+function whenReady(img) {
+  if (typeof img.decode === 'function') {
+    return img.decode().catch(() => {});
+  }
+  return new Promise(res => {
+    if (img.complete && img.naturalWidth > 0) res();
+    else {
+      img.addEventListener('load',  res, { once: true });
+      img.addEventListener('error', res, { once: true });
+    }
+  });
+}
+
+function decodeIdle(list) {
+  if (!list.length) return;
+  const next = list.shift();
+  whenReady(next).then(() => {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => decodeIdle(list), { timeout: 500 });
+    } else {
+      setTimeout(() => decodeIdle(list), 50);
+    }
+  });
+}
+
+Promise.all(
+  criticalImages.map(img => whenReady(img).then(bumpProgress))
+).then(() => {
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+
+      decodeIdle(deferredImages.slice());
+
+      setTimeout(() => {
+        loaderEl.style.transition = `opacity ${T_LOADER_FADE}ms ease`;
+        loaderEl.classList.add('out');
+
+        setTimeout(() => {
+          loaderEl.remove();
+          // Le wrapper apparaît, puis la ligne se trace
+          // Guard : ne pas afficher si zoom ou média en cours
+          setTimeout(() => {
+            if (!zoomed && !videoPlaying) {
+              captionWrapEl.classList.add('visible');
+              setTimeout(() => { if (!zoomed && !videoPlaying) animateCaptionLine(); }, 200);
+            }
+          }, 900);
+          // SRT chargé hors chemin critique, une fois la page prête + interaction possible
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => ensureSRTLoaded(), { timeout: 3000 });
+          } else {
+            setTimeout(() => ensureSRTLoaded(), 200);
+          }
+        }, T_LOADER_FADE + 100);
+      }, T_LOADER_HOLD);
+    });
+  });
+});
+
+})();
+</script>
+</body>
+</html>
